@@ -1,0 +1,45 @@
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+
+
+'You can add special event handlers in this file that will get run automatically when special Active Server Pages events
+'occur.  To create these handlers, just create a subroutine with a name from the list below that corresponds to the event
+'you want to use.  For example, to create an event handler for Session_OnStart, you would put the following code into this
+'file (without the comments):
+'Sub Session_OnStart
+'**Put your code here **
+'End Sub
+
+'EventName               Description
+'Session_OnStart      Runs the first time a user runs any page in your application
+'Session_OnEnd       Runs when a user's session times out or quits your application
+'Application_OnStart  Runs once when the first page of your application is run for the first time by any user
+'Application_OnEnd   Runs once when the web server shuts down
+
+Sub Application_OnStart
+''	Session("Access_ConnectionString") = "DSN=Admin;DBQ=C:\InetPub\wwwroot\NewHome\Admin.mdb;DriverId=25;FIL=MS Access;MaxBufferSize=512;PageTimeout=5;"
+	Application("Access_AdminConn") = "Driver={Microsoft Access Driver (*.mdb)};Dbq=c:\inetpub\wwwroot\newhome\admin.mdb;"
+	Application("SQL_AdminConn") = "driver={SQL Server};server=seasql01;database=devwebapps;uid=;pwd=;Trusted_Connection=Yes;DSN="
+'	Application("SQL_seasql02_ClaimsTestConnString") = "driver={SQL Server};server=seasql02;database=claimstest;uid=;pwd=;Trusted_Connection=Yes;DSN="
+	Application("SQL_seasql01_ClaimsTestConn") = "driver={SQL Server};server=seasql01;database=claimstest;uid=;pwd=;Trusted_Connection=Yes;DSN="
+	Application("SQL_seasql01_ClaimsConn") = "driver={SQL Server};server=seasql01;database=claims;uid=;pwd=;Trusted_Connection=Yes;DSN="
+	
+	Application("AdminConn") = Application("SQL_AdminConn")
+'	Application("AdminConn") = Application("Access_AdminConn")
+	Application("DataConn") = Application("SQL_seasql01_ClaimsTestConn")
+'	Application("DataConn") = Application("SQL_seasql01_ClaimsConn")
+	Application("IntMax") = 2147483647
+	Application("IntMin") = -2147483648
+	Application("SmlIntMax") = 32767
+	Application("SmlIntMin") = -32768
+	Application("SmlMnyMax") = 214748.3647
+	Application("SmlMnyMin") = -214748.3648
+End Sub
+
+Sub Session_OnStart
+
+	Session("EmphColor") = "#983300"
+	Session("StartTime") = Now
+
+End Sub
+
+</SCRIPT>

@@ -1,0 +1,17 @@
+.CriteriaTable
+{
+    BACKGROUND-COLOR: #63659C;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 8pt;
+    WIDTH: 100%
+    
+}
+.White {color: white}
+
+
+
+   /* Sliding Menu Style Sheet */
+  .sliderView {position: absolute; left: 0pt}
+  .sliderView DIV.slider {float: left; cursor: default; background: lightgrey; border-top: 1pt #EEEEEE solid; border-left: 1pt #EEEEEE solid;  border-bottom: 1pt gray solid; border-right: 1pt gray solid; width: 1.3em; text-align: center; font-size: 10pt}
+  .sliderView SPAN.arrow {font: 12pt webdings}
+  .sliderView .contents {width: 90%; float: left; background: lightgrey; border-bottom: 1pt #EEEEEE solid; border-right: 1pt #EEEEEE solid;  border-left: 1pt gray solid; border-top: 1pt gray solid;}
